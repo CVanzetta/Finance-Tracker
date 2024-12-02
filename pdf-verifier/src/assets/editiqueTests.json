@@ -14,7 +14,7 @@
           "operator": "<="
         }
       ],
-      "commentaires": ""
+      "commentaires": "Vérifiez la surface maximale autorisée."
     },
     {
       "id": "test2",
@@ -31,7 +31,7 @@
           "operator": "="
         }
       ],
-      "commentaires": ""
+      "commentaires": "Vérifiez que le montant de l'engagement est de 450 FFB."
     },
     {
       "id": "test3",
@@ -45,6 +45,6 @@
           "reference": "art.3"
         }
       ],
-      "commentaires": ""
+      "commentaires": "Vérifiez la date du contrôle mentionnée."
     }
   ]
