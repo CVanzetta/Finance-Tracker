@@ -1,50 +1,1303 @@
 [
     {
-      "id": "test1",
-      "categorie": "Incendie-Explosion",
-      "risque": "Incendie-Explosion et Assimilés",
-      "article": "art.1",
-      "engagement_max": "Valeur à neuf selon art. 23",
-      "franchise": "néant",
-      "conditions": [
-        {
-          "type": "surface_max",
-          "value": "XXX m²",
-          "reference": "art.11",
-          "operator": "<="
-        }
-      ],
-      "commentaires": "Vérifiez la surface maximale autorisée."
+        "id": "test1",
+        "categorie": "Incendie-Explosion",
+        "risque": "Incendie-Explosion et Assimilés",
+        "article": "art.1, 2, 3, 4, 10",
+        "engagement_max": "Valeur à neuf selon art.23",
+        "franchise": "Néant",
+        "conditions": [
+            {
+                "type": "garantie",
+                "value": "Incendie-Explosion et Assimilés",
+                "reference": "art.1, 2, 3, 4, 10",
+                "operator": "="
+            }
+        ],
+        "commentaires": "Vérifier les garanties incendie-explosion selon les articles 1 à 10."
     },
     {
-      "id": "test2",
-      "categorie": "Dégâts des eaux",
-      "risque": "Dégâts des eaux-Gel",
-      "article": "art.2",
-      "engagement_max": "450 FFB",
-      "franchise": "10% des dommages, mini 0.38 FFB",
-      "conditions": [
-        {
-          "type": "montant",
-          "value": "450 FFB",
-          "reference": "art.2",
-          "operator": "="
-        }
-      ],
-      "commentaires": "Vérifiez que le montant de l'engagement est de 450 FFB."
+        "id": "test2",
+        "categorie": "Propriété",
+        "risque": "Locaux Aménagés",
+        "article": "Locaux aménagés de moins de XXX m² – art.11 et aménagements – art.13",
+        "engagement_max": "Valeur à neuf selon art.23",
+        "franchise": "Optionnelle",
+        "conditions": [
+            {
+                "type": "surface_max",
+                "value": "XXX m²",
+                "reference": "art.11",
+                "operator": "<="
+            }
+        ],
+        "commentaires": "Vérifier que les locaux aménagés font moins de XXX m² selon l'article 11."
     },
     {
-      "id": "test3",
-      "categorie": "Contrôle",
-      "risque": "Dates importantes",
-      "article": "art.3",
-      "conditions": [
-        {
-          "type": "date",
-          "value": "Date du contrôle",
-          "reference": "art.3"
-        }
-      ],
-      "commentaires": "Vérifiez la date du contrôle mentionnée."
+        "id": "test3",
+        "categorie": "Aménagements Locatifs",
+        "risque": "Aménagements du Locataire",
+        "article": "Aménagements réalisés par le locataire et lui appartenant – art.13",
+        "engagement_max": "Valeur à neuf selon art.23",
+        "franchise": "Néant / 0,30 / 0,60 / 0,90 FFB",
+        "conditions": [],
+        "commentaires": "Vérifier les aménagements du locataire selon l'article 13."
+    },
+    {
+        "id": "test4",
+        "categorie": "Propriété",
+        "risque": "Locaux Non Aménagés",
+        "article": "Locaux non aménagés de moins de XXXX m² – art.11",
+        "engagement_max": "Valeur à neuf selon art.23",
+        "franchise": "Sauf en Tempête",
+        "conditions": [
+            {
+                "type": "surface_max",
+                "value": "XXXX m²",
+                "reference": "art.11",
+                "operator": "<="
+            }
+        ],
+        "commentaires": "Vérifier que les locaux non aménagés font moins de XXXX m² selon l'article 11."
+    },
+    {
+        "id": "test5",
+        "categorie": "Contenu Professionnel",
+        "risque": "Biens Professionnels",
+        "article": "Contenu professionnel – art.12",
+        "engagement_max": "Valeur à neuf selon art.23, à concurrence de : XXXXXXXXXX €",
+        "franchise": "10% des dommages, minimum 0,38 FFB en FP1, 0,58 en FP2, 0,87 en FP3, maximum 1,94 FFB",
+        "conditions": [],
+        "commentaires": "Vérifier le contenu professionnel selon l'article 12."
+    },
+    {
+        "id": "test6",
+        "categorie": "Limites d'Engagement",
+        "risque": "Biens",
+        "article": "Sans excéder pour :",
+        "engagement_max": "Selon les sous-limites définies",
+        "franchise": "Sauf en Catastrophes Naturelles : montant légal (10% des dommages, minimum 1 140 € ou 3 050 € si sécheresse, maximum 10 000 € par événement et par établissement si la surface développée est ≤ 300 m²)",
+        "conditions": [],
+        "commentaires": "Vérifier les limites d'engagement pour les biens en cas de catastrophes naturelles."
+    },
+    {
+        "id": "test7",
+        "categorie": "Archives",
+        "risque": "Archives Non Informatiques",
+        "article": "Archives non informatiques – art.12C",
+        "engagement_max": "80 FFB",
+        "franchise": "Néant",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les archives non informatiques selon l'article 12C."
+    },
+    {
+        "id": "test8",
+        "categorie": "Archives Informatiques",
+        "risque": "Archives Informatiques",
+        "article": "Archives informatiques – voir frais de reconstitution des informations art.25",
+        "engagement_max": "Selon art.25",
+        "franchise": "Néant",
+        "conditions": [],
+        "commentaires": "Consulter l'article 25 pour les garanties liées aux archives informatiques."
+    },
+    {
+        "id": "test9",
+        "categorie": "Biens Confiés",
+        "risque": "Biens Confiés",
+        "article": "Biens confiés – art.12F",
+        "engagement_max": "80 FFB",
+        "franchise": "Néant",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les biens confiés selon l'article 12F."
+    },
+    {
+        "id": "test10",
+        "categorie": "Biens Hors Établissement",
+        "risque": "Biens Hors Établissement",
+        "article": "Biens hors établissement – art.29",
+        "engagement_max": "80 FFB",
+        "franchise": "Néant",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les biens hors établissement selon l'article 29."
+    },
+    {
+        "id": "test11",
+        "categorie": "Objets de Valeur",
+        "risque": "Objets de Valeur",
+        "article": "Ensemble des objets de valeur appartenant à l'assuré",
+        "engagement_max": "80 FFB sans excéder par objet : 15 FFB",
+        "franchise": "Néant",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les objets de valeur de l'assuré."
+    },
+    {
+        "id": "test12",
+        "categorie": "Fonds et Valeurs",
+        "risque": "Fonds, Titres et Valeurs",
+        "article": "Fonds, titres et valeurs",
+        "engagement_max": "Selon conditions spécifiques",
+        "franchise": "Néant",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les fonds, titres et valeurs."
+    },
+    {
+        "id": "test13",
+        "categorie": "Fonds en Tiroirs Caisse",
+        "risque": "Fonds en Meubles Fermés",
+        "article": "En tiroirs caisse ou meubles fermés à clé",
+        "engagement_max": "3 FFB (ou 6, 10)",
+        "franchise": "Néant",
+        "conditions": [],
+        "commentaires": "Vérifier les plafonds d'indemnisation pour les fonds en tiroirs caisse."
+    },
+    {
+        "id": "test14",
+        "categorie": "Fonds en Coffre-Fort",
+        "risque": "Fonds en Coffre-Fort",
+        "article": "En coffre-fort",
+        "engagement_max": "10 FFB (ou 15, 30)",
+        "franchise": "Néant",
+        "conditions": [],
+        "commentaires": "Vérifier les plafonds d'indemnisation pour les fonds en coffre-fort."
+    },
+    {
+        "id": "test15",
+        "categorie": "Mobilier du Logement",
+        "risque": "Mobilier du Logement Occasionnel",
+        "article": "Mobilier du logement occasionnel contigu au local professionnel – art.12A",
+        "engagement_max": "15 FFB",
+        "franchise": "Néant",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour le mobilier du logement occasionnel selon l'article 12A."
+    },
+    {
+        "id": "test16",
+        "categorie": "Limites d'Engagement",
+        "risque": "Biens",
+        "article": "Sans excéder en cas de :",
+        "engagement_max": "Selon les sous-limites applicables",
+        "franchise": "Optionnelle",
+        "conditions": [],
+        "commentaires": "Vérifier les sous-limites en cas de sinistre."
+    },
+    {
+        "id": "test17",
+        "categorie": "Dégâts des Eaux",
+        "risque": "Dégâts des Eaux – Gel",
+        "article": "Dégâts des eaux – Gel – art.2",
+        "engagement_max": "450 FFB, dont au maximum pour :",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties en cas de dégâts des eaux ou gel selon l'article 2."
+    },
+    {
+        "id": "test18",
+        "categorie": "Dégâts des Eaux Spéciaux",
+        "risque": "Cas Particuliers",
+        "article": "Dégâts accidentels causés par les eaux de ruissellement, refoulement des égouts, infiltrations à travers les murs, etc.",
+        "engagement_max": "30 FFB pour l'ensemble",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les cas particuliers de dégâts des eaux."
+    },
+    {
+        "id": "test19",
+        "categorie": "Catastrophes Naturelles",
+        "risque": "Avalanche",
+        "article": "Avalanche – art.3",
+        "engagement_max": "450 FFB",
+        "franchise": "Franchise Tempête",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties en cas d'avalanche selon l'article 3."
+    },
+    {
+        "id": "test20",
+        "categorie": "Catastrophes Naturelles",
+        "risque": "Avance Récupérable",
+        "article": "Avance récupérable sur catastrophes naturelles – art.4",
+        "engagement_max": "8 FFB",
+        "franchise": "Franchise Catastrophes Naturelles",
+        "conditions": [],
+        "commentaires": "Vérifier les conditions de l'avance récupérable en cas de catastrophes naturelles."
+    },
+    {
+        "id": "test21",
+        "categorie": "Vandalisme",
+        "risque": "Dommages Non Consécutifs",
+        "article": "Vandalisme : dommages non consécutifs à un événement garanti",
+        "engagement_max": "25 FFB par sinistre et par année d'assurance",
+        "franchise": "1 FFB",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties en cas de vandalisme non consécutif à un événement garanti."
+    },
+    {
+        "id": "test22",
+        "categorie": "Vandalisme",
+        "risque": "Casse, Graffiti",
+        "article": "Casse, graffiti, etc. – art.10B",
+        "engagement_max": "Selon conditions",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour la casse et les graffitis selon l'article 10B."
+    },
+    {
+        "id": "test23",
+        "categorie": "Responsabilité Civile",
+        "risque": "Risques Locatifs",
+        "article": "Risques locatifs – art.15",
+        "engagement_max": "300 000 FFB",
+        "franchise": "Néant",
+        "conditions": [],
+        "commentaires": "Vérifier la responsabilité civile en cas de risques locatifs selon l'article 15."
+    },
+    {
+        "id": "test24",
+        "categorie": "Responsabilité Civile",
+        "risque": "Recours des Voisins et des Tiers",
+        "article": "Recours des voisins et des tiers – art.17",
+        "engagement_max": "5 000 FFB sans excéder en cas de dégâts des eaux 3 000 FFB",
+        "franchise": "Néant",
+        "conditions": [],
+        "commentaires": "Vérifier la responsabilité civile envers les voisins et tiers selon l'article 17."
+    },
+    {
+        "id": "test25",
+        "categorie": "Vol",
+        "risque": "Vol et Dégâts en Cas de Vol",
+        "article": "Vol et dégâts en cas de vol – art.5",
+        "engagement_max": "Selon conditions",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties en cas de vol selon l'article 5."
+    },
+    {
+        "id": "test26",
+        "categorie": "Vol",
+        "risque": "Détériorations Immobilières",
+        "article": "Détériorations immobilières en valeur à neuf – art.23",
+        "engagement_max": "25 FFB",
+        "franchise": "Optionnelle",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les détériorations immobilières en cas de vol."
+    },
+    {
+        "id": "test27",
+        "categorie": "Vol",
+        "risque": "Exception",
+        "article": "Si aucun contenu n'est garanti en vol (PNO, LNO ou clause 230 ou O cl6)",
+        "engagement_max": "Non applicable",
+        "franchise": "Non applicable",
+        "conditions": [],
+        "commentaires": "Vérifier les exceptions en cas de vol sans contenu garanti."
+    },
+    {
+        "id": "test28",
+        "categorie": "Vol",
+        "risque": "Contenu Professionnel",
+        "article": "Contenu professionnel et détériorations immobilières en valeur à neuf – art.23",
+        "engagement_max": "25% du capital assuré en Incendie",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier le pourcentage applicable pour le contenu professionnel en cas de vol."
+    },
+    {
+        "id": "test29",
+        "categorie": "Vol",
+        "risque": "Protection Renforcée",
+        "article": "Porté à 35% si les locaux professionnels sont protégés conformément aux clauses 15, 15A, 16A, 17 ou 17A",
+        "engagement_max": "35% du capital assuré en Incendie",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier l'augmentation de l'engagement maximal en cas de protection renforcée."
+    },
+    {
+        "id": "test30",
+        "categorie": "Vol",
+        "risque": "Minima et Maxima",
+        "article": "Avec un minimum de 25 FFB et un maximum de 155 FFB",
+        "engagement_max": "Minimum 25 FFB, maximum 155 FFB",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les limites minimales et maximales en cas de vol."
+    },
+    {
+        "id": "test31",
+        "categorie": "Vol",
+        "risque": "Limites",
+        "article": "Sans excéder ni les sous-limites prévues ci-dessus en Incendie, Dégâts des eaux, Tempête, etc., ni celles fixées ci-après",
+        "engagement_max": "Selon conditions",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les sous-limites applicables."
+    },
+    {
+        "id": "test32",
+        "categorie": "Vol",
+        "risque": "Remplacement des Serrures",
+        "article": "Remplacement des serrures en cas de vol des clés",
+        "engagement_max": "3 FFB",
+        "franchise": "Néant",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour le remplacement des serrures."
+    },
+    {
+        "id": "test33",
+        "categorie": "Vol",
+        "risque": "Biens en Devanture",
+        "article": "Biens en devanture en cas de vol sans pénétration dans les locaux",
+        "engagement_max": "10 FFB",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les biens en devanture."
+    },
+    {
+        "id": "test34",
+        "categorie": "Vol",
+        "risque": "Fonds Hors Établissement",
+        "article": "Fonds, titres et valeurs hors établissement (en cours de transport ou au domicile du porteur de fonds)",
+        "engagement_max": "10 FFB",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les fonds hors établissement."
+    },
+    {
+        "id": "test35",
+        "categorie": "Vol",
+        "risque": "Biens Hors Établissement",
+        "article": "Biens hors établissement – art.29",
+        "engagement_max": "25 FFB",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les biens hors établissement selon l'article 29."
+    },
+    {
+        "id": "test36",
+        "categorie": "Vol",
+        "risque": "Bâtiments Occupés par Intermittence",
+        "article": "Biens dans des bâtiments occupés par intermittence sous réserve de protections mécaniques conformes aux clauses 15 ou 15A",
+        "engagement_max": "10% du capital assuré en Incendie avec un maximum de 45 FFB",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les biens dans les bâtiments occupés par intermittence."
+    },
+    {
+        "id": "test37",
+        "categorie": "Autres Événements",
+        "risque": "Divers",
+        "article": "Autres événements",
+        "engagement_max": "Selon conditions",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les autres événements."
+    },
+    {
+        "id": "test38",
+        "categorie": "Bris de Glaces",
+        "risque": "Vitrages",
+        "article": "Bris de glaces et vitres – art.6",
+        "engagement_max": "15, 30 FFB (ou 45, 60)",
+        "franchise": "Optionnelle : sans franchise ou 0,20 FFB (base) ou 0,40 FFB (si doublée)",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour le bris de glaces selon l'article 6."
+    },
+    {
+        "id": "test39",
+        "categorie": "Bris de Glaces",
+        "risque": "Coût de Remplacement",
+        "article": "Coût de remplacement avec maximum de",
+        "engagement_max": "Selon conditions",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier le coût maximal de remplacement pour le bris de glaces."
+    },
+    {
+        "id": "test40",
+        "categorie": "Dommages Électriques",
+        "risque": "Appareils Électriques",
+        "article": "Dommages électriques – art.7",
+        "engagement_max": "40 FFB",
+        "franchise": "Optionnelle",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les dommages électriques selon l'article 7."
+    },
+    {
+        "id": "test41",
+        "categorie": "Dommages Électriques",
+        "risque": "Canalisations",
+        "article": "Sur canalisations",
+        "engagement_max": "Selon conditions",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les dommages sur canalisations."
+    },
+    {
+        "id": "test42",
+        "categorie": "Dommages Électriques",
+        "risque": "Appareils",
+        "article": "Sur appareils",
+        "engagement_max": "20 FFB (ou 40, 60)",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les dommages sur appareils."
+    },
+    {
+        "id": "test43",
+        "categorie": "Risque Bureautique",
+        "risque": "Matériel Bureautique",
+        "article": "Risque bureautique – art.8A",
+        "engagement_max": "15, 40 FFB (ou 60)",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour le matériel bureautique."
+    },
+    {
+        "id": "test44",
+        "categorie": "Bris de Chaudière",
+        "risque": "Surchauffe Accidentelle",
+        "article": "Bris de chaudière par surchauffe accidentelle – art.8B",
+        "engagement_max": "20 FFB",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour le bris de chaudière."
+    },
+    {
+        "id": "test45",
+        "categorie": "Marchandises Réfrigérées",
+        "risque": "Perte de Marchandises",
+        "article": "Perte de marchandises réfrigérées – art.9A",
+        "engagement_max": "30 FFB (ou 50, 75)",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour la perte de marchandises réfrigérées."
+    },
+    {
+        "id": "test46",
+        "categorie": "Perte de Liquides",
+        "risque": "Perte de Liquides",
+        "article": "Perte de liquides – art.9B",
+        "engagement_max": "Selon conditions",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour la perte de liquides."
+    },
+    {
+        "id": "test47",
+        "categorie": "Responsabilités Professionnelles",
+        "risque": "Responsabilité Civile",
+        "article": "Responsabilités professionnelles – art.14",
+        "engagement_max": "Selon conditions",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les responsabilités professionnelles selon l'article 14."
+    },
+    {
+        "id": "test48",
+        "categorie": "Responsabilité Civile",
+        "risque": "Exploitation",
+        "article": "Exploitation – art.14A",
+        "engagement_max": "Selon conditions",
+        "franchise": "Néant",
+        "conditions": [],
+        "commentaires": "Vérifier la responsabilité civile d'exploitation selon l'article 14A."
+    },
+    {
+        "id": "test49",
+        "categorie": "Responsabilité Civile",
+        "risque": "Dommages Corporels et Matériels",
+        "article": "Dommages corporels, matériels et immatériels consécutifs",
+        "engagement_max": "8 000 000 € non indexés, tous dommages confondus",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les plafonds pour les dommages corporels, matériels et immatériels consécutifs."
+    },
+    {
+        "id": "test50",
+        "categorie": "Responsabilité Civile",
+        "risque": "Sous-limites",
+        "article": "Dont au maximum :",
+        "engagement_max": "Selon conditions spécifiques",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les sous-limites maximales applicables."
+    },
+    {
+        "id": "test51",
+        "categorie": "Responsabilité Civile",
+        "risque": "Faute Inexcusable",
+        "article": "Faute inexcusable (accident du travail)",
+        "engagement_max": "1 670 FFB par sinistre et par année d'assurance",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties en cas de faute inexcusable."
+    },
+    {
+        "id": "test52",
+        "categorie": "Responsabilité Civile",
+        "risque": "Dommages Matériels",
+        "article": "Dommages matériels",
+        "engagement_max": "5 000 FFB sans excéder en cas de :",
+        "franchise": "0,30 FFB",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les dommages matériels."
+    },
+    {
+        "id": "test53",
+        "categorie": "Responsabilité Civile",
+        "risque": "Biens Confiés",
+        "article": "Dommages aux biens confiés",
+        "engagement_max": "150 FFB par sinistre et par année d'assurance",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les biens confiés."
+    },
+    {
+        "id": "test54",
+        "categorie": "Responsabilité Civile",
+        "risque": "Existants",
+        "article": "Dommages subis par les existants",
+        "engagement_max": "1 000 FFB",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les dommages aux existants."
+    },
+    {
+        "id": "test55",
+        "categorie": "Responsabilité Civile",
+        "risque": "Matériaux d'Autres Entrepreneurs",
+        "article": "Dommages aux matériaux des autres entrepreneurs",
+        "engagement_max": "60 FFB",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les matériaux des autres entrepreneurs."
+    },
+    {
+        "id": "test56",
+        "categorie": "Responsabilité Civile",
+        "risque": "Vol par les Préposés",
+        "article": "Vol du fait des préposés",
+        "engagement_max": "Selon conditions",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties en cas de vol par les préposés."
+    },
+    {
+        "id": "test57",
+        "categorie": "Risques Environnementaux",
+        "risque": "Tous Dommages Confondus",
+        "article": "Risques environnementaux",
+        "engagement_max": "400 000 € non indexés, par sinistre et par année d'assurance",
+        "franchise": "1 153 € sauf pour frais de dépollution : 346 €, dommages corporels : néant",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les risques environnementaux."
+    },
+    {
+        "id": "test58",
+        "categorie": "Risques Environnementaux",
+        "risque": "Sous-limites",
+        "article": "Sans excéder en cas de :",
+        "engagement_max": "Selon conditions spécifiques",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les sous-limites pour les risques environnementaux."
+    },
+    {
+        "id": "test59",
+        "categorie": "Responsabilité Civile",
+        "risque": "Atteintes à l'Environnement",
+        "article": "Responsabilité Civile Atteintes à l'Environnement",
+        "engagement_max": "400 000 € non indexés",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les atteintes à l'environnement."
+    },
+    {
+        "id": "test60",
+        "categorie": "Responsabilité Civile",
+        "risque": "Préjudice Écologique",
+        "article": "Préjudice Écologique",
+        "engagement_max": "200 000 € non indexés",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour le préjudice écologique."
+    },
+    {
+        "id": "test61",
+        "categorie": "Responsabilité Civile",
+        "risque": "Responsabilité Environnementale",
+        "article": "Responsabilité Environnementale",
+        "engagement_max": "200 000 € non indexés",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Corrigé 'Envitonnementale' en 'Environnementale'. Vérifier les garanties pour la responsabilité environnementale."
+    },
+    {
+        "id": "test62",
+        "categorie": "Risques Environnementaux",
+        "risque": "Frais",
+        "article": "Frais d'urgence, de prévention, de réparation",
+        "engagement_max": "50 000 € non indexés pour l'ensemble de ces frais",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les frais couverts en cas de risques environnementaux."
+    },
+    {
+        "id": "test63",
+        "categorie": "Risques Environnementaux",
+        "risque": "Frais de Dépollution",
+        "article": "Frais de dépollution",
+        "engagement_max": "5 000 € non indexés",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les frais de dépollution."
+    },
+    {
+        "id": "test64",
+        "categorie": "Responsabilité Civile",
+        "risque": "Dommages Immatériels",
+        "article": "Dommages immatériels",
+        "engagement_max": "Selon conditions",
+        "franchise": "0,30 FFB",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les dommages immatériels."
+    },
+    {
+        "id": "test65",
+        "categorie": "Responsabilité Civile",
+        "risque": "Immatériels Consécutifs",
+        "article": "Consécutifs à des dommages matériels garantis",
+        "engagement_max": "1 340 FFB",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les dommages immatériels consécutifs."
+    },
+    {
+        "id": "test66",
+        "categorie": "Responsabilité Civile",
+        "risque": "Immatériels Non Consécutifs",
+        "article": "Non consécutifs – art.14C",
+        "engagement_max": "670 FFB par sinistre et par année d'assurance",
+        "franchise": "1,50 FFB",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les dommages immatériels non consécutifs selon l'article 14C."
+    },
+    {
+        "id": "test67",
+        "categorie": "Responsabilité Civile",
+        "risque": "Après Travaux ou Livraison",
+        "article": "Après Travaux ou Livraison – art.14B",
+        "engagement_max": "8 340 FFB par sinistre et par année d'assurance",
+        "franchise": "0,30 FFB",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties après travaux ou livraison selon l'article 14B."
+    },
+    {
+        "id": "test68",
+        "categorie": "Responsabilité Civile",
+        "risque": "Tous Dommages Confondus",
+        "article": "Dommages corporels, matériels et immatériels, tous dommages confondus",
+        "engagement_max": "Selon conditions",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier le total des garanties pour tous dommages confondus."
+    },
+    {
+        "id": "test69",
+        "categorie": "Responsabilité Civile",
+        "risque": "Sous-limites",
+        "article": "Dont au maximum :",
+        "engagement_max": "5 000 FFB sans excéder en cas de",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les sous-limites maximales applicables."
+    },
+    {
+        "id": "test70",
+        "categorie": "Responsabilité Civile",
+        "risque": "Dommages Matériels",
+        "article": "Dommages matériels",
+        "engagement_max": "2 500 FFB",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les dommages matériels."
+    },
+    {
+        "id": "test71",
+        "categorie": "Responsabilité Civile",
+        "risque": "Existants",
+        "article": "Dommages subis par les existants",
+        "engagement_max": "Selon conditions",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les dommages aux existants."
+    },
+    {
+        "id": "test72",
+        "categorie": "Risques Environnementaux",
+        "risque": "Tous Dommages Confondus",
+        "article": "Risques environnementaux",
+        "engagement_max": "400 000 € non indexés, par sinistre et par année d'assurance",
+        "franchise": "1 153 € sauf pour frais de dépollution : 346 €, dommages corporels : néant",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les risques environnementaux."
+    },
+    {
+        "id": "test73",
+        "categorie": "Risques Environnementaux",
+        "risque": "Sous-limites",
+        "article": "Sans excéder en cas de :",
+        "engagement_max": "Selon conditions spécifiques",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les sous-limites pour les risques environnementaux."
+    },
+    {
+        "id": "test74",
+        "categorie": "Responsabilité Civile",
+        "risque": "Atteintes à l'Environnement",
+        "article": "Responsabilité Civile Atteintes à l'Environnement",
+        "engagement_max": "400 000 € non indexés",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les atteintes à l'environnement."
+    },
+    {
+        "id": "test75",
+        "categorie": "Responsabilité Civile",
+        "risque": "Préjudice Écologique",
+        "article": "Préjudice Écologique",
+        "engagement_max": "200 000 € non indexés",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour le préjudice écologique."
+    },
+    {
+        "id": "test76",
+        "categorie": "Responsabilité Civile",
+        "risque": "Responsabilité Environnementale",
+        "article": "Responsabilité Environnementale",
+        "engagement_max": "200 000 € non indexés",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour la responsabilité environnementale."
+    },
+    {
+        "id": "test77",
+        "categorie": "Risques Environnementaux",
+        "risque": "Frais",
+        "article": "Frais d'urgence, de prévention, de réparation",
+        "engagement_max": "50 000 € non indexés pour l'ensemble de ces frais",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les frais couverts en cas de risques environnementaux."
+    },
+    {
+        "id": "test78",
+        "categorie": "Risques Environnementaux",
+        "risque": "Frais de Dépollution",
+        "article": "Frais de dépollution",
+        "engagement_max": "5 000 € non indexés",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les frais de dépollution."
+    },
+    {
+        "id": "test79",
+        "categorie": "Responsabilité Civile",
+        "risque": "Dommages Immatériels Consécutifs",
+        "article": "Dommages immatériels consécutifs à des dommages matériels garantis",
+        "engagement_max": "1 340 FFB",
+        "franchise": "0,30 FFB",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les dommages immatériels consécutifs."
+    },
+    {
+        "id": "test80",
+        "categorie": "Responsabilité Civile",
+        "risque": "Dommages Immatériels Non Consécutifs",
+        "article": "Non consécutifs – art.14C",
+        "engagement_max": "670 FFB par sinistre et par année d'assurance",
+        "franchise": "1,50 FFB",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les dommages immatériels non consécutifs selon l'article 14C."
+    },
+    {
+        "id": "test81",
+        "categorie": "Responsabilité Civile",
+        "risque": "Propriétaire d'Immeubles",
+        "article": "Responsabilité Propriétaire d'Immeubles – art.18",
+        "engagement_max": "Selon conditions",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier la responsabilité civile en tant que propriétaire d'immeubles selon l'article 18."
+    },
+    {
+        "id": "test82",
+        "categorie": "Responsabilité Civile",
+        "risque": "Dommages Corporels et Matériels",
+        "article": "Dommages corporels, matériels et immatériels consécutifs",
+        "engagement_max": "8 000 000 € non indexés, tous dommages confondus",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les plafonds pour les dommages corporels, matériels et immatériels consécutifs."
+    },
+    {
+        "id": "test83",
+        "categorie": "Responsabilité Civile",
+        "risque": "Sous-limites",
+        "article": "Dont au maximum :",
+        "engagement_max": "Selon conditions spécifiques",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les sous-limites maximales applicables."
+    },
+    {
+        "id": "test84",
+        "categorie": "Responsabilité Civile",
+        "risque": "Dommages Matériels et Immatériels Consécutifs",
+        "article": "Dommages matériels et immatériels consécutifs",
+        "engagement_max": "5 000 FFB",
+        "franchise": "0,30 FFB",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les dommages matériels et immatériels consécutifs."
+    },
+    {
+        "id": "test85",
+        "categorie": "Risques Environnementaux",
+        "risque": "Tous Dommages Confondus",
+        "article": "Risques environnementaux",
+        "engagement_max": "400 000 € non indexés, par sinistre et par année d'assurance",
+        "franchise": "1 153 € sauf pour frais de dépollution : 346 €, dommages corporels : néant",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les risques environnementaux."
+    },
+    {
+        "id": "test86",
+        "categorie": "Risques Environnementaux",
+        "risque": "Sous-limites",
+        "article": "Sans excéder en cas de :",
+        "engagement_max": "Selon conditions spécifiques",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les sous-limites pour les risques environnementaux."
+    },
+    {
+        "id": "test87",
+        "categorie": "Responsabilité Civile",
+        "risque": "Atteintes à l'Environnement",
+        "article": "Responsabilité Civile Atteintes à l'Environnement",
+        "engagement_max": "400 000 € non indexés",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les atteintes à l'environnement."
+    },
+    {
+        "id": "test88",
+        "categorie": "Responsabilité Civile",
+        "risque": "Préjudice Écologique",
+        "article": "Préjudice Écologique",
+        "engagement_max": "200 000 € non indexés",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour le préjudice écologique."
+    },
+    {
+        "id": "test89",
+        "categorie": "Responsabilité Civile",
+        "risque": "Responsabilité Environnementale",
+        "article": "Responsabilité Environnementale",
+        "engagement_max": "200 000 € non indexés",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour la responsabilité environnementale."
+    },
+    {
+        "id": "test90",
+        "categorie": "Risques Environnementaux",
+        "risque": "Frais",
+        "article": "Frais d'urgence, de prévention, de réparation",
+        "engagement_max": "50 000 € non indexés pour l'ensemble de ces frais",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les frais couverts en cas de risques environnementaux."
+    },
+    {
+        "id": "test91",
+        "categorie": "Risques Environnementaux",
+        "risque": "Frais de Dépollution",
+        "article": "Frais de dépollution",
+        "engagement_max": "5 000 € non indexés",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les frais de dépollution."
+    },
+    {
+        "id": "test92",
+        "categorie": "Responsabilité Civile",
+        "risque": "Recours des Locataires",
+        "article": "Recours des locataires – art.16",
+        "engagement_max": "5 000 FFB sans excéder en cas de dégâts des eaux 3 000 FFB",
+        "franchise": "Néant",
+        "conditions": [],
+        "commentaires": "Vérifier la responsabilité civile envers les locataires selon l'article 16."
+    },
+    {
+        "id": "test93",
+        "categorie": "Perte d'Exploitation",
+        "risque": "Profession Libérale",
+        "article": "Perte d'exploitation – art.19",
+        "engagement_max": "Profession libérale : 200 FFB (jusqu'à 1 000 FFB)",
+        "franchise": "Relative : 3 jours ouvrés",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties de perte d'exploitation pour les professions libérales selon l'article 19."
+    },
+    {
+        "id": "test94",
+        "categorie": "Perte d'Exploitation",
+        "risque": "Entreprise",
+        "article": "Période d'indemnisation de 12 mois",
+        "engagement_max": "Entreprise : 500 FFB (jusqu'à 1 500 FFB)",
+        "franchise": "Relative : 3 jours ouvrés",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties de perte d'exploitation pour les entreprises."
+    },
+    {
+        "id": "test95",
+        "categorie": "Perte de Valeur Vénale",
+        "risque": "Fonds de Commerce",
+        "article": "Perte de Valeur Vénale du fonds de commerce – art.20",
+        "engagement_max": "Selon conditions",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour la perte de valeur vénale du fonds de commerce."
+    },
+    {
+        "id": "test96",
+        "categorie": "Perte de Valeur Vénale",
+        "risque": "Catastrophes Naturelles",
+        "article": "L'engagement maximal 'Perte de valeur vénale du fonds' est réduit de moitié en cas de catastrophes naturelles",
+        "engagement_max": "Réduction de 50% en cas de catastrophes naturelles",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier la réduction de l'engagement maximal en cas de catastrophes naturelles."
+    },
+    {
+        "id": "test97",
+        "categorie": "Garanties Complémentaires",
+        "risque": "Divers",
+        "article": "Garanties complémentaires",
+        "engagement_max": "Selon conditions",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties complémentaires disponibles."
+    },
+    {
+        "id": "test98",
+        "categorie": "Défense Civile",
+        "risque": "Intérêts de l'Assuré",
+        "article": "Défense Civile des intérêts de l'assuré – art.21",
+        "engagement_max": "15 FFB",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour la défense civile des intérêts de l'assuré."
+    },
+    {
+        "id": "test99",
+        "categorie": "Divers",
+        "risque": "Non Spécifié",
+        "article": "Non spécifié",
+        "engagement_max": "Selon conditions",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Informations non spécifiées."
+    },
+    {
+        "id": "test100",
+        "categorie": "Insolvabilité des Tiers",
+        "risque": "Insolvabilité",
+        "article": "Insolvabilité des tiers – art.22",
+        "engagement_max": "15 FFB",
+        "franchise": "Néant",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties en cas d'insolvabilité des tiers."
+    },
+    {
+        "id": "test101",
+        "categorie": "Mesures de Sauvetage",
+        "risque": "Sauvetage",
+        "article": "Mesures de sauvetage – art.24",
+        "engagement_max": "Frais réels justifiés dans les limites fixées pour chaque bien et chaque événement garanti",
+        "franchise": "Néant",
+        "conditions": [],
+        "commentaires": "Vérifier les conditions pour les mesures de sauvetage."
+    },
+    {
+        "id": "test102",
+        "categorie": "Frais de Démolition et Déblais",
+        "risque": "Démolition",
+        "article": "Frais de démolition et déblais – art.28A",
+        "engagement_max": "Selon conditions",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les frais de démolition et déblais."
+    },
+    {
+        "id": "test103",
+        "categorie": "Frais de Reconstitution",
+        "risque": "Informations",
+        "article": "Frais de reconstitution des informations – art.25",
+        "engagement_max": "40 FFB",
+        "franchise": "Néant",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour la reconstitution des informations."
+    },
+    {
+        "id": "test104",
+        "categorie": "Perte d'Usage",
+        "risque": "Usage",
+        "article": "Perte d'usage – art.26",
+        "engagement_max": "18 mois",
+        "franchise": "Néant",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour la perte d'usage."
+    },
+    {
+        "id": "test105",
+        "categorie": "Perte de Loyers",
+        "risque": "Loyers",
+        "article": "Perte de loyers – art.27",
+        "engagement_max": "Selon conditions",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour la perte de loyers."
+    },
+    {
+        "id": "test106",
+        "categorie": "Frais Annexes",
+        "risque": "Divers",
+        "article": "Frais annexes – art.28B",
+        "engagement_max": "Frais réels justifiés dans la limite de 300 FFB sans excéder pour les honoraires d'expert 5% de l'indemnité jusqu'à 250 fois l'indice et 2,5% au-delà, pour les pertes indirectes 10% de l'indemnité",
+        "franchise": "Néant",
+        "conditions": [],
+        "commentaires": "Vérifier les conditions pour les frais annexes."
+    },
+    {
+        "id": "test107",
+        "categorie": "Divers",
+        "risque": "Non Spécifié",
+        "article": "Non spécifié",
+        "engagement_max": "Selon conditions",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Informations non spécifiées."
+    },
+    {
+        "id": "test108",
+        "categorie": "Transport",
+        "risque": "Marchandises Transportées",
+        "article": "Marchandises, matériels professionnels transportés – art.29B",
+        "engagement_max": "XXXX € par sinistre et par année d'assurance dans la limite de XXXX € par véhicule",
+        "franchise": "20% des dommages, FP1 : mini 0,20 FFB maxi 0,45 FFB, FP2 : mini 0,60 FFB maxi 0,90 FFB, FP3 : mini 0,90 FFB maxi 1,35 FFB",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les marchandises transportées."
+    },
+    {
+        "id": "test109",
+        "categorie": "Protection Juridique",
+        "risque": "Droits de l'Assuré",
+        "article": "Protection des droits de l'assuré – chapitre 14",
+        "engagement_max": "Au-delà du seuil d'intervention et dans les limites prévues à l'article 56E",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour la protection juridique de l'assuré."
+    },
+    {
+        "id": "test110",
+        "categorie": "Protection Juridique",
+        "risque": "Informations Juridiques",
+        "article": "Informations juridiques – art.56A",
+        "engagement_max": "Selon conditions",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les services d'informations juridiques disponibles."
+    },
+    {
+        "id": "test111",
+        "categorie": "Protection Juridique",
+        "risque": "Défense Pénale",
+        "article": "Défense pénale et recours suite à accident – art.56B",
+        "engagement_max": "Selon conditions",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour la défense pénale et les recours."
+    },
+    {
+        "id": "test112",
+        "categorie": "Protection Juridique",
+        "risque": "Protection Juridique",
+        "article": "Protection juridique – art.56C",
+        "engagement_max": "Retenue ou non retenue ou impossible",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier la disponibilité de la protection juridique selon l'article 56C."
+    },
+    {
+        "id": "test113",
+        "categorie": "Assistance",
+        "risque": "Assistance",
+        "article": "Assistance – art.57",
+        "engagement_max": "Dans les limites et conditions prévues à l'article 57",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les services d'assistance disponibles."
+    },
+    {
+        "id": "test114",
+        "categorie": "Extensions de Garanties",
+        "risque": "Divers",
+        "article": "Extensions de garanties",
+        "engagement_max": "Selon conditions",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les extensions de garanties disponibles."
+    },
+    {
+        "id": "test115",
+        "categorie": "Pertes Pécuniaires",
+        "risque": "Faute Inexcusable",
+        "article": "Pertes pécuniaires en cas de faute inexcusable (en cas de maladie professionnelle) – art.30A",
+        "engagement_max": "2 000 FFB par année d'assurance",
+        "franchise": "Néant",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les pertes pécuniaires en cas de faute inexcusable."
+    },
+    {
+        "id": "test116",
+        "categorie": "Divers",
+        "risque": "Non Spécifié",
+        "article": "Non spécifié",
+        "engagement_max": "Selon conditions",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Informations non spécifiées."
+    },
+    {
+        "id": "test117",
+        "categorie": "Bris de Machines",
+        "risque": "Machines",
+        "article": "Bris de machines – art.31",
+        "engagement_max": "15, 35, 75, 95 ou 125 FFB",
+        "franchise": "Optionnelle",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour le bris de machines."
+    },
+    {
+        "id": "test118",
+        "categorie": "Perte d'Exploitation Étendue",
+        "risque": "Perte d'Exploitation",
+        "article": "Perte d'exploitation étendue – art.32A",
+        "engagement_max": "Même limite que celle de la perte d'exploitation de base – art.19",
+        "franchise": "Relative : 3 jours ouvrés",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour la perte d'exploitation étendue."
+    },
+    {
+        "id": "test119",
+        "categorie": "Perte d'Exploitation",
+        "risque": "Période d'Indemnisation",
+        "article": "Période d'indemnisation de 18 mois",
+        "engagement_max": "Selon conditions",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier la période d'indemnisation pour la perte d'exploitation."
+    },
+    {
+        "id": "test120",
+        "categorie": "Perte d'Exploitation",
+        "risque": "Accès aux Locaux",
+        "article": "Interdiction, difficultés ou impossibilité d'accès aux locaux professionnels",
+        "engagement_max": "10% de la limite ci-dessus",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties en cas d'impossibilité d'accès aux locaux."
+    },
+    {
+        "id": "test121",
+        "categorie": "Perte d'Exploitation",
+        "risque": "Carence des Fournisseurs",
+        "article": "Carence des fournisseurs",
+        "engagement_max": "Selon conditions",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties en cas de carence des fournisseurs."
+    },
+    {
+        "id": "test122",
+        "categorie": "Perte d'Exploitation",
+        "risque": "Fermeture du Leader",
+        "article": "Fermeture temporaire du leader",
+        "engagement_max": "Selon conditions",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties en cas de fermeture du leader."
+    },
+    {
+        "id": "test123",
+        "categorie": "Maintien du Service Client",
+        "risque": "Service Client",
+        "article": "Maintien du service client – art.32B",
+        "engagement_max": "Sur justificatifs des frais supplémentaires engagés, dans la limite de 0,20 ou 0,40 FFB par jour et par personne assurée accidentée pendant 120 jours maximum",
+        "franchise": "Relative : 3 jours ouvrés",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour le maintien du service client."
+    },
+    {
+        "id": "test124",
+        "categorie": "Remplacement à Neuf",
+        "risque": "Matériel",
+        "article": "Remplacement à neuf du matériel – art.33",
+        "engagement_max": "Indemnisation dans les conditions de l'article 33",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les conditions pour le remplacement à neuf du matériel."
+    },
+    {
+        "id": "test125",
+        "categorie": "Abords",
+        "risque": "Abords",
+        "article": "Abords – art.34",
+        "engagement_max": "15, 30, 60, 90, 120 ou 150 FFB sans excéder :",
+        "franchise": "Optionnelle",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les abords."
+    },
+    {
+        "id": "test126",
+        "categorie": "Abords",
+        "risque": "Arbres",
+        "article": "Par arbre",
+        "engagement_max": "1,5 FFB",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les arbres."
+    },
+    {
+        "id": "test127",
+        "categorie": "Abords",
+        "risque": "Haies",
+        "article": "Par mètre de haie",
+        "engagement_max": "0,15 FFB",
+        "franchise": "Selon contrat",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour les haies."
+    },
+    {
+        "id": "test128",
+        "categorie": "Responsabilité Civile",
+        "risque": "Dirigeants",
+        "article": "Responsabilité civile personnelle des dirigeants de l'entreprise – art.30A",
+        "engagement_max": "XXXXX €",
+        "franchise": "Néant",
+        "conditions": [],
+        "commentaires": "Vérifier les garanties pour la responsabilité civile des dirigeants."
     }
-  ]
+]
