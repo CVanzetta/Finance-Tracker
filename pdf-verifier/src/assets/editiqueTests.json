@@ -1,0 +1,50 @@
+[
+    {
+      "id": "test1",
+      "categorie": "Incendie-Explosion",
+      "risque": "Incendie-Explosion et Assimilés",
+      "article": "art.1",
+      "engagement_max": "Valeur à neuf selon art. 23",
+      "franchise": "néant",
+      "conditions": [
+        {
+          "type": "surface_max",
+          "value": "XXX m²",
+          "reference": "art.11",
+          "operator": "<="
+        }
+      ],
+      "commentaires": ""
+    },
+    {
+      "id": "test2",
+      "categorie": "Dégâts des eaux",
+      "risque": "Dégâts des eaux-Gel",
+      "article": "art.2",
+      "engagement_max": "450 FFB",
+      "franchise": "10% des dommages, mini 0.38 FFB",
+      "conditions": [
+        {
+          "type": "montant",
+          "value": "450 FFB",
+          "reference": "art.2",
+          "operator": "="
+        }
+      ],
+      "commentaires": ""
+    },
+    {
+      "id": "test3",
+      "categorie": "Contrôle",
+      "risque": "Dates importantes",
+      "article": "art.3",
+      "conditions": [
+        {
+          "type": "date",
+          "value": "Date du contrôle",
+          "reference": "art.3"
+        }
+      ],
+      "commentaires": ""
+    }
+  ]
