@@ -1,0 +1,146 @@
+{
+    "categories": [
+        {
+            "nom": "Incendie-Explosion et Assimilés, Dégâts des eaux-Gel, Tempête-Avalanche-Grêle-Neige, Catastrophes naturelles, Attentats-Vandalisme",
+            "tests": [
+                {
+                    "id": "test1",
+                    "categorie": "Incendie-Explosion",
+                    "risque": "Incendie-Explosion et Assimilés",
+                    "article": "art.1, 2, 3, 4, 10",
+                    "engagement_max": "Valeur à neuf selon art.23",
+                    "franchise": "Option : néant / 0,30 / 0,60 / 0,90 FFB, sauf en Tempête : 10% des dommages, minimum 0,38 FFB en FP1, 0,58 en FP2, 0,87 en FP3, maximum 1,94 FFB",
+                    "conditions": [
+                        {
+                            "type": "garantie",
+                            "value": "Incendie-Explosion et Assimilés",
+                            "reference": "art.1, 2, 3, 4, 10",
+                            "operator": "="
+                        }
+                    ],
+                    "commentaires": "Vérifier les garanties incendie-explosion selon les articles 1 à 10."
+                },
+                {
+                    "id": "test2",
+                    "categorie": "Propriété",
+                    "risque": "Locaux Aménagés",
+                    "article": "Locaux aménagés de moins de XXX m² – art.11 et aménagements – art.13",
+                    "engagement_max": "Valeur à neuf selon art.23",
+                    "franchise": "Optionnelle",
+                    "conditions": [
+                        {
+                            "type": "surface_max",
+                            "value": "XXX m²",
+                            "reference": "art.11",
+                            "operator": "<="
+                        },
+                        {
+                            "type": "aménagements",
+                            "value": "présence d'aménagements selon art.13",
+                            "reference": "art.13",
+                            "operator": "présent"
+                        }
+                    ],
+                    "commentaires": "Vérifier que les locaux aménagés font moins de XXX m² selon l'article 11 et que les aménagements sont présents selon l'article 13."
+                },
+                {
+                    "id": "test4",
+                    "categorie": "Propriété",
+                    "risque": "Locaux Non Aménagés",
+                    "article": "Locaux non aménagés de moins de XXXX m² – art.11",
+                    "engagement_max": "Valeur à neuf selon art.23",
+                    "franchise": "Sauf en Tempête",
+                    "conditions": [
+                        {
+                            "type": "surface_max",
+                            "value": "XXXX m²",
+                            "reference": "art.11",
+                            "operator": "<="
+                        },
+                        {
+                            "type": "dommages",
+                            "value": "dommages non couverts en cas de tempête",
+                            "reference": "article spécifique",
+                            "operator": "exclusion"
+                        }
+                    ],
+                    "commentaires": "Vérifier que les locaux non aménagés font moins de XXXX m² selon l'article 11 et que les dommages ne sont pas couverts en cas de tempête."
+                },
+                {
+                    "id": "test5",
+                    "categorie": "Contenu Professionnel",
+                    "risque": "Biens Professionnels",
+                    "article": "Contenu professionnel – art.12",
+                    "engagement_max": "Valeur à neuf selon art.23, à concurrence de : XXXXXXXXXX €",
+                    "franchise": "10% des dommages, minimum 0,38 FFB en FP1, 0,58 en FP2, 0,87 en FP3, maximum 1,94 FFB",
+                    "conditions": [
+                        {
+                            "type": "valeur_max",
+                            "value": "XXXXXXXXXX €",
+                            "reference": "art.23",
+                            "operator": "<="
+                        },
+                        {
+                            "type": "franchise",
+                            "value": "10% des dommages avec limites spécifiques",
+                            "reference": "FP1, FP2, FP3",
+                            "operator": "appliquer"
+                        }
+                    ],
+                    "commentaires": "Vérifier le contenu professionnel selon l'article 12, en respectant la limite de valeur et les franchises applicables."
+                },
+                {
+                    "id": "test6",
+                    "categorie": "Limites d'Engagement",
+                    "risque": "Biens",
+                    "article": "Sans excéder pour :",
+                    "engagement_max": "Selon les sous-limites définies",
+                    "franchise": "Sauf en Catastrophes Naturelles : montant légal (10% des dommages, minimum 1 140 € ou 3 050 € si sécheresse, maximum 10 000 € par événement et par établissement si la surface développée est ≤ 300 m²)",
+                    "conditions": [
+                        {
+                            "type": "dommages_max",
+                            "value": "10% des dommages",
+                            "reference": "sous-limites légales",
+                            "operator": "<="
+                        },
+                        {
+                            "type": "surface_max",
+                            "value": "300 m²",
+                            "reference": "catastrophes naturelles",
+                            "operator": "<="
+                        }
+                    ],
+                    "commentaires": "Vérifier les limites d'engagement pour les biens en cas de catastrophes naturelles, incluant les montants maximaux des dommages et les limites de surface."
+                }
+            ]
+        },
+        {
+            "nom": "Vol et Dégâts en Cas de Vol",
+            "tests": [
+                {
+                    "id": "test29",
+                    "categorie": "Vol",
+                    "risque": "Détériorations Immobilières",
+                    "article": "art.5, 29",
+                    "engagement_max": "25% du capital assuré en Incendie, porté à 35% si les locaux professionnels sont protégés conformément aux clauses 15, 15A, 16A, 17 ou 17A, avec un minimum de 25 FFB et un maximum de 155 FFB, sans excéder les sous-limites prévues en Incendie, Dégâts des eaux, Tempête… ni celles fixées ci-après : 3 FFB",
+                    "franchise": "3 FFB",
+                    "conditions": [
+                        {
+                            "type": "protection",
+                            "value": "locaux protégés",
+                            "reference": "clauses 15, 15A, 16A, 17, 17A",
+                            "operator": "="
+                        },
+                        {
+                            "type": "engagement_max",
+                            "value": "25% ou 35% du capital assuré",
+                            "reference": "art.5, 29",
+                            "operator": "selon protection"
+                        }
+                    ],
+                    "commentaires": "Vérifier les détériorations immobilières en cas de vol selon l'article 5 ou 29, incluant les sous-limites et la protection des locaux."
+                }
+            ]
+        }
+    ]
+}
