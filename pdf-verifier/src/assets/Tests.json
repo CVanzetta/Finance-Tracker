@@ -15,12 +15,6 @@
                             "type": "garantie",
                             "value": "Incendie-Explosion et Assimilés",
                             "reference": "art.1, 2, 3, 4, 10",
-                            "operator": "="
-                        },
-                        {
-                            "type": "article_presence",
-                            "value": "art.1, 2, 3, 4, 10",
-                            "reference": "document",
                             "operator": "présent"
                         }
                     ],
@@ -30,7 +24,7 @@
                     "id": "test2",
                     "categorie": "Propriété",
                     "risque": "Locaux Aménagés",
-                    "article": "Locaux aménagés de moins de XXX m² – art.11 et aménagements – art.13",
+                    "article": "Locaux aménagés de moins de 200 m² – art.11 et aménagements – art.13",
                     "engagement_max": "Valeur à neuf selon art.23",
                     "franchise": "Optionnelle",
                     "conditions": [
@@ -53,13 +47,13 @@
                     "id": "test4",
                     "categorie": "Propriété",
                     "risque": "Locaux Non Aménagés",
-                    "article": "Locaux non aménagés de moins de XXXX m² – art.11",
+                    "article": "Locaux non aménagés de moins de 200 m² – art.11",
                     "engagement_max": "Valeur à neuf selon art.23",
                     "franchise": "Sauf en Tempête",
                     "conditions": [
                         {
                             "type": "surface_max",
-                            "value": "XXXX m²",
+                            "value": "200 m²",
                             "reference": "art.11",
                             "operator": "<="
                         },
@@ -70,7 +64,7 @@
                             "operator": "exclusion"
                         }
                     ],
-                    "commentaires": "Vérifier que les locaux non aménagés font moins de XXXX m² selon l'article 11 et que les dommages ne sont pas couverts en cas de tempête."
+                    "commentaires": "Vérifier que les locaux non aménagés font moins de 200 m² selon l'article 11 et que les dommages ne sont pas couverts en cas de tempête."
                 },
                 {
                     "id": "test5",
@@ -82,7 +76,7 @@
                     "conditions": [
                         {
                             "type": "valeur_max",
-                            "value": "5 000 €",
+                            "value": "5000 €",
                             "reference": "art.23",
                             "operator": "<="
                         },
@@ -135,7 +129,7 @@
                             "type": "protection",
                             "value": "locaux protégés",
                             "reference": "clauses 15, 15A, 16A, 17, 17A",
-                            "operator": "="
+                            "operator": "présent"
                         },
                         {
                             "type": "engagement_max",
