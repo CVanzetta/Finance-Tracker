@@ -36,7 +36,7 @@
                     "conditions": [
                         {
                             "type": "surface_max",
-                            "value": "XXX m²",
+                            "value": "200 m²",
                             "reference": "art.11",
                             "operator": "<="
                         },
@@ -47,7 +47,7 @@
                             "operator": "présent"
                         }
                     ],
-                    "commentaires": "Vérifier que les locaux aménagés font moins de XXX m² selon l'article 11 et que les aménagements sont présents selon l'article 13."
+                    "commentaires": "Vérifier que les locaux aménagés font moins de 200 m² selon l'article 11 et que les aménagements sont présents selon l'article 13."
                 },
                 {
                     "id": "test4",
@@ -77,12 +77,12 @@
                     "categorie": "Contenu Professionnel",
                     "risque": "Biens Professionnels",
                     "article": "Contenu professionnel – art.12",
-                    "engagement_max": "Valeur à neuf selon art.23, à concurrence de : XXXXXXXXXX €",
+                    "engagement_max": "Valeur à neuf selon art.23, à concurrence de : 5 000 €",
                     "franchise": "10% des dommages, minimum 0,38 FFB en FP1, 0,58 en FP2, 0,87 en FP3, maximum 1,94 FFB",
                     "conditions": [
                         {
                             "type": "valeur_max",
-                            "value": "XXXXXXXXXX €",
+                            "value": "5 000 €",
                             "reference": "art.23",
                             "operator": "<="
                         },
