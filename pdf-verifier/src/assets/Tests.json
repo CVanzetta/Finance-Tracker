@@ -64,7 +64,7 @@
                             "operator": "<="
                         },
                         {
-                            "type": "dommages",
+                            "type": "tempête_exclusion",
                             "value": "dommages non couverts en cas de tempête",
                             "reference": "article spécifique",
                             "operator": "exclusion"
@@ -87,7 +87,7 @@
                             "operator": "<="
                         },
                         {
-                            "type": "franchise",
+                            "type": "franchise_applicable",
                             "value": "10% des dommages avec limites spécifiques",
                             "reference": "FP1, FP2, FP3",
                             "operator": "appliquer"
