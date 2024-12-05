@@ -16,6 +16,12 @@
                             "value": "Incendie-Explosion et Assimilés",
                             "reference": "art.1, 2, 3, 4, 10",
                             "operator": "="
+                        },
+                        {
+                            "type": "article_presence",
+                            "value": "art.1, 2, 3, 4, 10",
+                            "reference": "document",
+                            "operator": "présent"
                         }
                     ],
                     "commentaires": "Vérifier les garanties incendie-explosion selon les articles 1 à 10."
@@ -30,7 +36,7 @@
                     "conditions": [
                         {
                             "type": "surface_max",
-                            "value": "XXX m²",
+                            "value": "200 m²",
                             "reference": "art.11",
                             "operator": "<="
                         },
@@ -41,7 +47,7 @@
                             "operator": "présent"
                         }
                     ],
-                    "commentaires": "Vérifier que les locaux aménagés font moins de XXX m² selon l'article 11 et que les aménagements sont présents selon l'article 13."
+                    "commentaires": "Vérifier que les locaux aménagés font moins de 200 m² selon l'article 11 et que les aménagements sont présents selon l'article 13."
                 },
                 {
                     "id": "test4",
@@ -58,7 +64,7 @@
                             "operator": "<="
                         },
                         {
-                            "type": "dommages",
+                            "type": "tempête_exclusion",
                             "value": "dommages non couverts en cas de tempête",
                             "reference": "article spécifique",
                             "operator": "exclusion"
@@ -71,17 +77,17 @@
                     "categorie": "Contenu Professionnel",
                     "risque": "Biens Professionnels",
                     "article": "Contenu professionnel – art.12",
-                    "engagement_max": "Valeur à neuf selon art.23, à concurrence de : XXXXXXXXXX €",
+                    "engagement_max": "Valeur à neuf selon art.23, à concurrence de : 5 000 €",
                     "franchise": "10% des dommages, minimum 0,38 FFB en FP1, 0,58 en FP2, 0,87 en FP3, maximum 1,94 FFB",
                     "conditions": [
                         {
                             "type": "valeur_max",
-                            "value": "XXXXXXXXXX €",
+                            "value": "5 000 €",
                             "reference": "art.23",
                             "operator": "<="
                         },
                         {
-                            "type": "franchise",
+                            "type": "franchise_applicable",
                             "value": "10% des dommages avec limites spécifiques",
                             "reference": "FP1, FP2, FP3",
                             "operator": "appliquer"
@@ -136,6 +142,12 @@
                             "value": "25% ou 35% du capital assuré",
                             "reference": "art.5, 29",
                             "operator": "selon protection"
+                        },
+                        {
+                            "type": "sous_limites",
+                            "value": "sous-limites prévues",
+                            "reference": "Incendie, Dégâts des eaux, Tempête",
+                            "operator": "ne pas excéder"
                         }
                     ],
                     "commentaires": "Vérifier les détériorations immobilières en cas de vol selon l'article 5 ou 29, incluant les sous-limites et la protection des locaux."
