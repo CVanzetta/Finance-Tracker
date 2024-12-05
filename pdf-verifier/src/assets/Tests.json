@@ -12,7 +12,7 @@
                     "franchise": "Option : néant / 0,30 / 0,60 / 0,90 FFB, sauf en Tempête : 10% des dommages, minimum 0,38 FFB en FP1, 0,58 en FP2, 0,87 en FP3, maximum 1,94 FFB",
                     "conditions": [
                         {
-                            "type": "présence_garantie",
+                            "type": "garantie",
                             "value": "Incendie-Explosion et Assimilés",
                             "reference": "art.1, 2, 3, 4, 10",
                             "operator": "présent"
@@ -24,7 +24,7 @@
                             "operator": "="
                         },
                         {
-                            "type": "présence_franchise",
+                            "type": "franchise",
                             "value": "néant / 0,30 / 0,60 / 0,90 FFB, sauf en Tempête",
                             "reference": "option",
                             "operator": "présent"
@@ -47,7 +47,7 @@
                             "operator": "<="
                         },
                         {
-                            "type": "présence_aménagements",
+                            "type": "aménagements",
                             "value": "présence d'aménagements",
                             "reference": "art.13",
                             "operator": "présent"
@@ -76,9 +76,9 @@
                             "operator": "<="
                         },
                         {
-                            "type": "exclusion_tempête",
+                            "type": "exclusion",
                             "value": "dommages non couverts en cas de tempête",
-                            "reference": "article spécifique",
+                            "reference": "art.11",
                             "operator": "exclusion"
                         },
                         {
@@ -105,7 +105,7 @@
                             "operator": "<="
                         },
                         {
-                            "type": "franchise_applicable",
+                            "type": "franchise",
                             "value": "10% des dommages avec limites spécifiques",
                             "reference": "FP1, FP2, FP3",
                             "operator": "appliquer"
@@ -159,13 +159,13 @@
                             "type": "engagement_max",
                             "value": "25% ou 35% du capital assuré",
                             "reference": "art.5, 29",
-                            "operator": "selon protection"
+                            "operator": "="
                         },
                         {
                             "type": "sous_limites",
                             "value": "sous-limites prévues",
                             "reference": "Incendie, Dégâts des eaux, Tempête",
-                            "operator": "ne pas excéder"
+                            "operator": "<="
                         }
                     ],
                     "commentaires": "Vérifier les détériorations immobilières en cas de vol selon l'article 5 ou 29, incluant les sous-limites et la protection des locaux."
