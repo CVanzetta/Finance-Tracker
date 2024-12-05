@@ -12,7 +12,7 @@
                     "franchise": "Option : néant / 0,30 / 0,60 / 0,90 FFB, sauf en Tempête : 10% des dommages, minimum 0,38 FFB en FP1, 0,58 en FP2, 0,87 en FP3, maximum 1,94 FFB",
                     "conditions": [
                         {
-                            "type": "garantie",
+                            "type": "présence_garantie",
                             "value": "Incendie-Explosion et Assimilés",
                             "reference": "art.1, 2, 3, 4, 10",
                             "operator": "présent"
@@ -24,7 +24,7 @@
                             "operator": "="
                         },
                         {
-                            "type": "franchise",
+                            "type": "présence_franchise",
                             "value": "néant / 0,30 / 0,60 / 0,90 FFB, sauf en Tempête",
                             "reference": "option",
                             "operator": "présent"
