@@ -91,12 +91,12 @@
         {
             "id": 6,
             "categorie": "Vol",
-            "article": "art.5, 29",
+            "article": "art.5, 23",
             "conditions": [
             {
                 "type": "protection_locaux",
                 "value": "protection des locaux",
-                "reference": "art.5, 29",
+                "reference": "art.5, 23",
                 "operator": "présent"
             }
             ]
