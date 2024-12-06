@@ -1,131 +1,165 @@
 {
     "categories": [
-    {
+      {
         "nom": "Incendie-Explosion",
         "tests": [
-        {
+          {
             "id": 1,
             "categorie": "Incendie-Explosion",
             "article": "art.1, 2, 3, 4, 10",
             "conditions": [
-            {
-                "type": "garantie",
-                "value": "Incendie-Explosion et Assimilés",
-                "reference": "art.1, 2, 3, 4, 10",
-                "operator": "présent"
-            }
+              {
+                "type": "texte_present",
+                "value": "incendie-explosion et assimiles",
+                "reference": "art.1, 2, 3, 4, 10"
+              }
             ]
-        }
+          }
         ]
-    },
-    {
+      },
+      {
         "nom": "Propriété",
         "tests": [
-        {
+          {
             "id": 2,
             "categorie": "Propriété",
             "article": "art.11, 13",
             "conditions": [
-            {
-                "type": "surface_max",
-                "value": "200",
-                "reference": "locaux aménagés",
-                "operator": "<="
-            }
+              {
+                "type": "texte_present",
+                "value": "locaux amenages",
+                "reference": "art.11, 13"
+              }
             ]
-        },
-        {
+          },
+          {
             "id": 3,
             "categorie": "Propriété",
             "article": "art.11",
             "conditions": [
-            {
-                "type": "surface_max",
-                "value": "200",
-                "reference": "locaux non aménagés",
-                "operator": "<="
-            }
+              {
+                "type": "texte_present",
+                "value": "locaux non amenages",
+                "reference": "art.11"
+              }
             ]
-        }
+          }
         ]
-    },
-    {
+      },
+      {
         "nom": "Contenu Professionnel",
         "tests": [
-        {
+          {
             "id": 4,
             "categorie": "Contenu Professionnel",
             "article": "art.12",
             "conditions": [
-            {
-                "type": "valeur_max",
-                "value": "15000",
-                "reference": "contenu professionnel",
-                "operator": "<="
-            }
+              {
+                "type": "texte_present",
+                "value": "contenu professionnel",
+                "reference": "art.12"
+              }
             ]
-        }
+          }
         ]
-    },
-    {
+      },
+      {
         "nom": "Limites d'Engagement",
         "tests": [
-        {
+          {
             "id": 5,
             "categorie": "Limites d'Engagement",
             "article": "art.5, 29",
             "conditions": [
-            {
-                "type": "engagement_max",
-                "value": "10000",
-                "reference": "sans excéder",
-                "operator": "<="
-            }
+              {
+                "type": "texte_present",
+                "value": "sans exceder",
+                "reference": "art.5, 29"
+              }
             ]
-        }
+          }
         ]
-    },
-    {
+      },
+      {
         "nom": "Vol",
         "tests": [
-        {
+          {
             "id": 6,
             "categorie": "Vol",
             "article": "art.5, 23",
             "conditions": [
-            {
-                "type": "protection_locaux",
+              {
+                "type": "texte_present",
                 "value": "protection des locaux",
-                "reference": "art.5, 23",
-                "operator": "présent"
-            }
+                "reference": "art.5, 23"
+              }
             ]
-        }
+          }
         ]
-    },
-    {
+      },
+      {
         "nom": "Risques Environnementaux",
         "tests": [
-        {
+          {
             "id": 7,
             "categorie": "Risques Environnementaux",
-            "article": "art.14C",
+            "article": "art.14",
             "conditions": [
-            {
-                "type": "valeur_max",
-                "value": "400000",
-                "reference": "dommages confondus",
-                "operator": "<="
-            },
-            {
-                "type": "frais_depollution",
-                "value": "5000",
-                "reference": "frais de dépollution",
-                "operator": "<="
-            }
+              {
+                "type": "texte_present_separé",
+                "values": [
+                  "responsabilites civile atteintes a l'environnement",
+                  "400 000 € non indexes"
+                ],
+                "reference": "art.14"
+              },
+              {
+                "type": "texte_present_separé",
+                "values": [
+                  "prejudice ecologique",
+                  "200 000 € non indexes"
+                ],
+                "reference": "art.14"
+              },
+              {
+                "type": "texte_present_separé",
+                "values": [
+                  "responsabilite environnementale",
+                  "200 000 € non indexes"
+                ],
+                "reference": "art.14"
+              },
+              {
+                "type": "texte_present",
+                "value": "frais d'urgence, de prevention, de reparation 50 000 € non indexes",
+                "reference": "art.14"
+              },
+              {
+                "type": "texte_present",
+                "value": "frais de depollution 5 000 € non indexes",
+                "reference": "art.14"
+              }
             ]
-        }
+          },
+          {
+            "id": 8,
+            "categorie": "Risques Environnementaux",
+            "article": "art.14",
+            "conditions": [
+              {
+                "type": "texte_present_separé",
+                "values": [
+                  "1153 €",
+                  "sauf pour",
+                  "frais de depollution : 346 €",
+                  "dommages corporels : neant"
+                ],
+                "reference": "art.14"
+              }
+            ]
+          }
         ]
-    }
+      }
     ]
-}
+  }
+  
