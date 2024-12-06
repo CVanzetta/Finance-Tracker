@@ -18,11 +18,11 @@
         ]
       },
       {
-        "nom": "Propriété",
+        "nom": "Propriété - Locaux Aménagés",
         "tests": [
           {
             "id": 2,
-            "categorie": "Propriété",
+            "categorie": "Propriété - Locaux Aménagés",
             "article": "art.11, 13",
             "conditions": [
               {
@@ -31,10 +31,15 @@
                 "reference": "art.11, 13"
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "nom": "Propriété - Locaux Non Aménagés",
+        "tests": [
           {
             "id": 3,
-            "categorie": "Propriété",
+            "categorie": "Propriété - Locaux Non Aménagés",
             "article": "art.11",
             "conditions": [
               {
@@ -98,11 +103,11 @@
         ]
       },
       {
-        "nom": "Risques Environnementaux",
+        "nom": "Risques Environnementaux - Responsabilités",
         "tests": [
           {
             "id": 7,
-            "categorie": "Risques Environnementaux",
+            "categorie": "Risques Environnementaux - Responsabilités",
             "article": "art.14",
             "conditions": [
               {
@@ -140,10 +145,15 @@
                 "reference": "art.14"
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "nom": "Risques Environnementaux - Frais",
+        "tests": [
           {
             "id": 8,
-            "categorie": "Risques Environnementaux",
+            "categorie": "Risques Environnementaux - Frais",
             "article": "art.14",
             "conditions": [
               {
