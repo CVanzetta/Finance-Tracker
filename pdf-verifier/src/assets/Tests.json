@@ -1,108 +1,107 @@
 {
     "categories": [
-      {
+    {
         "nom": "Incendie-Explosion",
         "tests": [
-          {
+        {
             "id": 1,
             "categorie": "Incendie-Explosion",
             "article": "art.1, 2, 3, 4, 10",
             "conditions": [
-              {
+            {
                 "type": "garantie",
                 "value": "Incendie-Explosion et Assimilés",
                 "reference": "art.1, 2, 3, 4, 10",
                 "operator": "présent"
-              }
+            }
             ]
-          }
+        }
         ]
-      },
-      {
+    },
+    {
         "nom": "Propriété",
         "tests": [
-          {
+        {
             "id": 2,
             "categorie": "Propriété",
             "article": "art.11, 13",
             "conditions": [
-              {
+            {
                 "type": "surface_max",
                 "value": "200",
                 "reference": "locaux aménagés",
                 "operator": "<="
-              }
+            }
             ]
-          },
-          {
+        },
+        {
             "id": 3,
             "categorie": "Propriété",
             "article": "art.11",
             "conditions": [
-              {
+            {
                 "type": "surface_max",
                 "value": "200",
                 "reference": "locaux non aménagés",
                 "operator": "<="
-              }
+            }
             ]
-          }
+        }
         ]
-      },
-      {
+    },
+    {
         "nom": "Contenu Professionnel",
         "tests": [
-          {
+        {
             "id": 4,
             "categorie": "Contenu Professionnel",
             "article": "art.12",
             "conditions": [
-              {
+            {
                 "type": "valeur_max",
                 "value": "15000",
                 "reference": "contenu professionnel",
                 "operator": "<="
-              }
+            }
             ]
-          }
+        }
         ]
-      },
-      {
+    },
+    {
         "nom": "Limites d'Engagement",
         "tests": [
-          {
+        {
             "id": 5,
             "categorie": "Limites d'Engagement",
             "article": "art.5, 29",
             "conditions": [
-              {
+            {
                 "type": "engagement_max",
                 "value": "10000",
                 "reference": "sans excéder",
                 "operator": "<="
-              }
+            }
             ]
-          }
+        }
         ]
-      },
-      {
+    },
+    {
         "nom": "Vol",
         "tests": [
-          {
+        {
             "id": 6,
             "categorie": "Vol",
             "article": "art.5, 29",
             "conditions": [
-              {
+            {
                 "type": "protection_locaux",
                 "value": "protection des locaux",
                 "reference": "art.5, 29",
                 "operator": "présent"
-              }
+            }
             ]
-          }
+        }
         ]
-      }
+    }
     ]
-  }
-  
+}
