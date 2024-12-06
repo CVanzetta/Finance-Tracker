@@ -102,6 +102,30 @@
             ]
         }
         ]
+    },
+    {
+        "nom": "Risques Environnementaux",
+        "tests": [
+        {
+            "id": 7,
+            "categorie": "Risques Environnementaux",
+            "article": "art.14C",
+            "conditions": [
+            {
+                "type": "valeur_max",
+                "value": "400000",
+                "reference": "dommages confondus",
+                "operator": "<="
+            },
+            {
+                "type": "frais_depollution",
+                "value": "5000",
+                "reference": "frais de dépollution",
+                "operator": "<="
+            }
+            ]
+        }
+        ]
     }
     ]
 }
