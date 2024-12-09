@@ -111,7 +111,7 @@
             "article": "art.14",
             "conditions": [
               {
-                "type": "texte_present_separé",
+                "type": "texte_multi_colonnes",
                 "values": [
                   "responsabilites civile atteintes a l'environnement",
                   "400 000 € non indexes"
@@ -119,7 +119,7 @@
                 "reference": "art.14"
               },
               {
-                "type": "texte_present_separé",
+                "type": "texte_multi_colonnes",
                 "values": [
                   "prejudice ecologique",
                   "200 000 € non indexes"
@@ -127,7 +127,7 @@
                 "reference": "art.14"
               },
               {
-                "type": "texte_present_separé",
+                "type": "texte_multi_colonnes",
                 "values": [
                   "responsabilite environnementale",
                   "200 000 € non indexes"
@@ -157,7 +157,7 @@
             "article": "art.14",
             "conditions": [
               {
-                "type": "texte_present_separé",
+                "type": "texte_multi_colonnes",
                 "values": [
                   "1153 €",
                   "sauf pour",
