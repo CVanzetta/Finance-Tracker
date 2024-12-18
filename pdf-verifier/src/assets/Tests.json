@@ -1,175 +1,179 @@
 {
-    "categories": [
-      {
-        "nom": "Incendie-Explosion",
-        "tests": [
-          {
-            "id": 1,
-            "categorie": "Incendie-Explosion",
-            "article": "art.1, 2, 3, 4, 10",
-            "conditions": [
-              {
-                "type": "texte_present",
-                "value": "incendie-explosion et assimiles",
-                "reference": "art.1, 2, 3, 4, 10"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "nom": "Propriété - Locaux Aménagés",
-        "tests": [
-          {
-            "id": 2,
-            "categorie": "Propriété - Locaux Aménagés",
-            "article": "art.11, 13",
-            "conditions": [
-              {
-                "type": "texte_present",
-                "value": "locaux amenages",
-                "reference": "art.11, 13"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "nom": "Propriété - Locaux Non Aménagés",
-        "tests": [
-          {
-            "id": 3,
-            "categorie": "Propriété - Locaux Non Aménagés",
-            "article": "art.11",
-            "conditions": [
-              {
-                "type": "texte_present",
-                "value": "locaux non amenages",
-                "reference": "art.11"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "nom": "Contenu Professionnel",
-        "tests": [
-          {
-            "id": 4,
-            "categorie": "Contenu Professionnel",
-            "article": "art.12",
-            "conditions": [
-              {
-                "type": "texte_present",
-                "value": "contenu professionnel",
-                "reference": "art.12"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "nom": "Limites d'Engagement",
-        "tests": [
-          {
-            "id": 5,
-            "categorie": "Limites d'Engagement",
-            "article": "art.5, 29",
-            "conditions": [
-              {
-                "type": "texte_present",
-                "value": "sans exceder",
-                "reference": "art.5, 29"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "nom": "Vol",
-        "tests": [
-          {
-            "id": 6,
-            "categorie": "Vol",
-            "article": "art.5, 23",
-            "conditions": [
-              {
-                "type": "texte_present",
-                "value": "protection des locaux",
-                "reference": "art.5, 23"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "nom": "Risques Environnementaux - Responsabilités",
-        "tests": [
-          {
-            "id": 7,
-            "categorie": "Risques Environnementaux - Responsabilités",
-            "article": "art.14",
-            "conditions": [
-              {
-                "type": "texte_multi_colonnes",
-                "values": [
-                  "responsabilites civile atteintes a l'environnement",
-                  "400 000 € non indexes"
-                ],
-                "reference": "art.14"
-              },
-              {
-                "type": "texte_multi_colonnes",
-                "values": [
-                  "prejudice ecologique",
-                  "200 000 € non indexes"
-                ],
-                "reference": "art.14"
-              },
-              {
-                "type": "texte_multi_colonnes",
-                "values": [
-                  "responsabilite environnementale",
-                  "200 000 € non indexes"
-                ],
-                "reference": "art.14"
-              },
-              {
-                "type": "texte_present",
-                "value": "frais d'urgence, de prevention, de reparation 50 000 € non indexes",
-                "reference": "art.14"
-              },
-              {
-                "type": "texte_present",
-                "value": "frais de depollution 5 000 € non indexes",
-                "reference": "art.14"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "nom": "Risques Environnementaux - Frais",
-        "tests": [
-          {
-            "id": 8,
-            "categorie": "Risques Environnementaux - Frais",
-            "article": "art.14",
-            "conditions": [
-              {
-                "type": "texte_multi_colonnes",
-                "values": [
-                  "1153 €",
-                  "sauf pour",
-                  "frais de depollution : 346 €",
-                  "dommages corporels : neant"
-                ],
-                "reference": "art.14"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
-  
+  "categories": [
+    {
+      "nom": "Incendie-Explosion",
+      "tests": [
+        {
+          "id": 1,
+          "categorie": "Incendie-Explosion",
+          "article": "art.1, 2, 3, 4, 10",
+          "conditions": [
+            {
+              "type": "texte_present",
+              "value": "incendie-explosion et assimiles",
+              "reference": "art.1, 2, 3, 4, 10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nom": "Propriété - Locaux Aménagés",
+      "tests": [
+        {
+          "id": 2,
+          "categorie": "Propriété - Locaux Aménagés",
+          "article": "art.11, 13",
+          "conditions": [
+            {
+              "type": "texte_present",
+              "value": "locaux amenages",
+              "reference": "art.11, 13"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nom": "Propriété - Locaux Non Aménagés",
+      "tests": [
+        {
+          "id": 3,
+          "categorie": "Propriété - Locaux Non Aménagés",
+          "article": "art.11",
+          "conditions": [
+            {
+              "type": "texte_present",
+              "value": "locaux non amenages",
+              "reference": "art.11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nom": "Contenu Professionnel",
+      "tests": [
+        {
+          "id": 4,
+          "categorie": "Contenu Professionnel",
+          "article": "art.12",
+          "conditions": [
+            {
+              "type": "texte_present",
+              "value": "contenu professionnel",
+              "reference": "art.12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nom": "Limites d'Engagement",
+      "tests": [
+        {
+          "id": 5,
+          "categorie": "Limites d'Engagement",
+          "article": "art.5, 29",
+          "conditions": [
+            {
+              "type": "texte_present",
+              "value": "sans exceder",
+              "reference": "art.5, 29"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nom": "Vol",
+      "tests": [
+        {
+          "id": 6,
+          "categorie": "Vol",
+          "article": "art.5, 23",
+          "conditions": [
+            {
+              "type": "texte_present",
+              "value": "protection des locaux",
+              "reference": "art.5, 23"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nom": "Risques Environnementaux",
+      "sousCategories": [
+        {
+          "nom": "Responsabilités",
+          "tests": [
+            {
+              "id": 7,
+              "categorie": "Risques Environnementaux - Responsabilités",
+              "article": "art.14",
+              "conditions": [
+                {
+                  "type": "texte_multi_colonnes",
+                  "values": [
+                    "responsabilites civile atteintes a l'environnement",
+                    "400 000 € non indexes"
+                  ],
+                  "reference": "art.14"
+                },
+                {
+                  "type": "texte_multi_colonnes",
+                  "values": [
+                    "prejudice ecologique",
+                    "200 000 € non indexes"
+                  ],
+                  "reference": "art.14"
+                },
+                {
+                  "type": "texte_multi_colonnes",
+                  "values": [
+                    "responsabilite environnementale",
+                    "200 000 € non indexes"
+                  ],
+                  "reference": "art.14"
+                },
+                {
+                  "type": "texte_present",
+                  "value": "frais d'urgence, de prevention, de reparation 50 000 € non indexes",
+                  "reference": "art.14"
+                },
+                {
+                  "type": "texte_present",
+                  "value": "frais de depollution 5 000 € non indexes",
+                  "reference": "art.14"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nom": "Frais",
+          "tests": [
+            {
+              "id": 8,
+              "categorie": "Risques Environnementaux - Frais",
+              "article": "art.14",
+              "conditions": [
+                {
+                  "type": "texte_multi_colonnes",
+                  "values": [
+                    "1153 €",
+                    "sauf pour",
+                    "frais de depollution : 346 €",
+                    "dommages corporels : neant"
+                  ],
+                  "reference": "art.14"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
