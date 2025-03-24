@@ -133,3 +133,5 @@ MIT - Projet personnel
 **⚠️ Important**: Ne commitez JAMAIS votre fichier `.env` ! Vos clés API doivent rester secrètes.
 
 <!-- Update: 2025-03-27 12:39:00 -->
+
+<!-- Update: 2025-03-24 11:31:00 -->
