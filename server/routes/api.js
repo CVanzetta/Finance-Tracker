@@ -5,14 +5,12 @@ const analyticsService = require('../services/analyticsService');
 const router = express.Router();
 
 /**
- * Sanitize error responses to prevent exposing sensitive information
- * @param {Error} error - The error object
- * @returns {string} Safe error message
+ * Sanitize error responses to prevent exposing sensitive information.
+ * Never returns raw error.response?.data as it may contain sensitive info like API keys or tokens.
+ * @param {Error} error - The error object from axios or other sources
+ * @returns {string} Safe, user-friendly error message
  */
 function getSafeErrorMessage(error) {
-  // Log full error details for debugging (server-side only)
-  // Never return raw error.response?.data as it may contain sensitive info
-  
   // Return generic user-friendly messages based on HTTP status codes
   const status = error.response?.status;
   
