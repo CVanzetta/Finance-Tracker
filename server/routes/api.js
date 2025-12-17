@@ -16,6 +16,37 @@ function isValidEmail(email) {
   // RFC 5322 compliant email regex (simplified but robust)
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email.trim());
+ * Valide le format d'un email
+ * @param {string} email - Email à valider
+ * @returns {boolean} True si valide, false sinon
+ */
+function isValidEmail(email) {
+  if (!email || typeof email !== 'string') return false;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+/**
+ * Sanitise les erreurs pour ne pas exposer d'informations sensibles
+ * @param {Error} error - Erreur à sanitiser
+ * @returns {string} Message d'erreur sécurisé
+ */
+function sanitizeError(error) {
+  // Ne jamais renvoyer les détails complets de l'API
+  // Seulement un message générique
+  if (error.response?.status === 401) {
+    return 'Erreur d\'authentification';
+  }
+  if (error.response?.status === 403) {
+    return 'Accès refusé';
+  }
+  if (error.response?.status === 404) {
+    return 'Ressource non trouvée';
+  }
+  if (error.response?.status >= 500) {
+    return 'Erreur du service externe';
+  }
+  return 'Une erreur est survenue';
 }
 
 /**
@@ -42,8 +73,7 @@ router.post('/bridge/connect-url', async (req, res) => {
     // Valider l'email si fourni
     if (req.body.email && !isValidEmail(req.body.email)) {
       return res.status(400).json({
-        error: 'Format d\'email invalide',
-        details: 'L\'adresse email fournie n\'est pas valide'
+        error: 'Format d\'email invalide'
       });
     }
 
@@ -64,10 +94,10 @@ router.post('/bridge/connect-url', async (req, res) => {
       user_uuid: userUuid
     });
   } catch (error) {
-    console.error('Erreur création URL de connexion:', error.response?.data || error.message);
-    res.status(500).json({
+    console.error('Erreur création URL de connexion:', error.message);
+    res.status(error.response?.status || 500).json({
       error: 'Impossible de créer l\'URL de connexion',
-      details: error.response?.data || error.message
+      details: sanitizeError(error)
     });
   }
 });
@@ -82,10 +112,10 @@ router.get('/accounts', async (req, res) => {
     const accounts = await bridgeService.getAccounts();
     res.json(accounts);
   } catch (error) {
-    console.error('Erreur récupération comptes:', error.response?.data || error.message);
-    res.status(500).json({
+    console.error('Erreur récupération comptes:', error.message);
+    res.status(error.response?.status || 500).json({
       error: 'Impossible de récupérer les comptes',
-      details: error.response?.data || error.message
+      details: sanitizeError(error)
     });
   }
 });
@@ -112,10 +142,10 @@ router.get('/transactions', async (req, res) => {
 
     res.json(transactions);
   } catch (error) {
-    console.error('Erreur récupération transactions:', error.response?.data || error.message);
-    res.status(500).json({
+    console.error('Erreur récupération transactions:', error.message);
+    res.status(error.response?.status || 500).json({
       error: 'Impossible de récupérer les transactions',
-      details: error.response?.data || error.message
+      details: sanitizeError(error)
     });
   }
 });
@@ -145,10 +175,10 @@ router.get('/analytics/categories', async (req, res) => {
 
     res.json(analysis);
   } catch (error) {
-    console.error('Erreur analyse catégories:', error.response?.data || error.message);
-    res.status(500).json({
+    console.error('Erreur analyse catégories:', error.message);
+    res.status(error.response?.status || 500).json({
       error: 'Impossible d\'analyser les catégories',
-      details: error.response?.data || error.message
+      details: sanitizeError(error)
     });
   }
 });
