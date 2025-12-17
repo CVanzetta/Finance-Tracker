@@ -5,6 +5,17 @@ const analyticsService = require('../services/analyticsService');
 const router = express.Router();
 
 /**
+ * Valide le format d'une adresse email
+ * @param {string} email - Email à valider
+ * @returns {boolean} True si l'email est valide
+ */
+function isValidEmail(email) {
+  if (!email || typeof email !== 'string') {
+    return false;
+  }
+  // RFC 5322 compliant email regex (simplified but robust)
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email.trim());
  * Valide le format d'un email
  * @param {string} email - Email à valider
  * @returns {boolean} True si valide, false sinon
