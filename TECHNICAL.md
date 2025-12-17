@@ -18,9 +18,9 @@ Application d'analyse financière sécurisée avec intégration Bridge API (Cré
 
 ```
 ┌─────────────┐      HTTP/REST      ┌──────────────┐      Bridge API v3     ┌─────────────┐
-│   React     │ ◄─────────────────► │   Express    │ ◄───────────────────► │   Bridge    │
-│  Frontend   │                      │   Backend    │                         │   API       │
-└─────────────┘                      └──────────────┘                         └─────────────┘
+│   React     │ ◄─────────────────► │   Express    │ ◄───────────────────►  │   Bridge    │
+│  Frontend   │                     │   Backend    │                        │   API       │
+└─────────────┘                     └──────────────┘                        └─────────────┘
 ```
 
 ### Composants principaux
