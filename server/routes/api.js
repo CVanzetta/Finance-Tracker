@@ -5,6 +5,20 @@ const analyticsService = require('../services/analyticsService');
 const router = express.Router();
 
 /**
+ * Valide le format d'une adresse email
+ * @param {string} email - Email à valider
+ * @returns {boolean} True si l'email est valide
+ */
+function isValidEmail(email) {
+  if (!email || typeof email !== 'string') {
+    return false;
+  }
+  // RFC 5322 compliant email regex (simplified but robust)
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email.trim());
+}
+
+/**
  * @route GET /api/health
  * @desc Vérification de l'état de l'API
  * @access Public
@@ -25,6 +39,14 @@ router.get('/health', (req, res) => {
  */
 router.post('/bridge/connect-url', async (req, res) => {
   try {
+    // Valider l'email si fourni
+    if (req.body.email && !isValidEmail(req.body.email)) {
+      return res.status(400).json({
+        error: 'Format d\'email invalide',
+        details: 'L\'adresse email fournie n\'est pas valide'
+      });
+    }
+
     // Créer un utilisateur Bridge
     const userUuid = await bridgeService.createUser();
 
